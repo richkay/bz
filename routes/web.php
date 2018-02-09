@@ -11,6 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function()
+{
+    return 'Hello World';
 });
+
+
+Route::any('{slug}', 'PagesController@page');
+
+Route::any('/articles/{slug}', 'PagesController@article');
+
+Route::any('/products/{slug}', 'PagesController@product');
+
+Route::any('/events/{slug}', 'PagesController@event');
